@@ -162,5 +162,32 @@ dot.addEventListener('click', () => {
 
 let shift = document.querySelector('.shift')
 shift.addEventListener('click', () => {
-    // if ()
+    if (!(operationInfo['operator'])) {
+        if (operationInfo[`num1`]) {
+            if (!(operationInfo['finish'])) {
+                let newNumber = operationInfo[`num1`].slice(0, -1)//second parameter is not included in the output
+                if (newNumber !== '') {
+                    operationInfo[`num1`] = newNumber
+                    output.textContent = operationInfo[`num1`]
+                } else {
+                    operationInfo[`num1`] = 0
+                    output.textContent = operationInfo[`num1`]
+                }
+            }
+        }
+
+    } else {
+        if ((operationInfo[`num2`])) {
+            let newNumber = operationInfo[`num1`].slice(0, -1)//second parameter is not included in the output
+            if (newNumber !== '') {
+                operationInfo[`num1`] = newNumber
+                output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+            } else {
+                operationInfo[`num2`] = 0
+                output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+            }
+
+        }
+    }
+
 })
