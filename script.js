@@ -38,7 +38,7 @@ function operation(firstNumber, secondNumber, operator) {
 
 
 let numbers = document.querySelectorAll('.numberBtn')
-let i = 1;
+let dotCheck = false;
 let operationInfo = {};
 let output = document.querySelector('.outputResult')
 let outputText = document.querySelector('.outputText')
@@ -81,6 +81,7 @@ operators.forEach(operator => {
         if ((operationInfo[`num1`]) && !(operationInfo[`num2`])) {
             operationInfo['operator'] = operator.innerHTML
             output.textContent = operationInfo[`num1`] + operationInfo[`operator`]
+            dotCheck = false
             delete operationInfo['finish'];
 
         } else if ((operationInfo[`num1`]) && (operationInfo[`num2`])) {
@@ -91,6 +92,7 @@ operators.forEach(operator => {
             operationInfo['operator'] = operator.innerHTML;
             delete operationInfo['num2'];
             output.textContent = result
+            dotCheck = false
 
         }
         console.log(operationInfo);
@@ -101,7 +103,7 @@ let equal = document.querySelector('.equal')
 equal.addEventListener('click', () => {
     let result = operation(+operationInfo['num1'], +operationInfo['num2'], operationInfo['operator']);
     operationInfo['finish'] = true;
-    outputText.textContent=operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+    outputText.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
     output.textContent = result;
     operationInfo['num1'] = result;
     delete operationInfo['num2'];
@@ -113,5 +115,40 @@ let clear = document.querySelector('.clear')
 clear.addEventListener('click', () => {
     operationInfo = {}
     output.textContent = 0
-    outputText.textContent=''
+    outputText.textContent = ''
+})
+
+let change = document.querySelector('.change')
+change.addEventListener('click', () => {
+    if ((operationInfo[`num1`]) && !(operationInfo[`num2`])) {
+        if (operationInfo[`num1`] > 0) {
+            operationInfo[`num1`] = -operationInfo[`num1`]
+            output.textContent = operationInfo[`num1`]
+            console.log(operationInfo)
+        } else {
+            operationInfo[`num1`] = operationInfo[`num1`] * -1
+            output.textContent = operationInfo[`num1`]
+            console.log(operationInfo)
+        }
+    }
+})
+
+let dot = document.querySelector('.dot')
+dot.addEventListener('click', () => {
+    if (!(operationInfo['operator'])) {
+        if (!dotCheck) {
+            operationInfo[`num1`] += dot.textContent;
+            output.textContent = operationInfo[`num1`]
+            dotCheck = true
+        }
+    } else {
+        if (!dotCheck) {
+            operationInfo[`num2`] += dot.textContent;
+            output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+            dotCheck = true
+        }
+
+    }
+
+
 })
