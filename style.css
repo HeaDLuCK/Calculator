@@ -17,7 +17,6 @@ body {
     height: 400px;
     width: 400px;
     background-color: gray;
-
     padding: 4px;
 
 }
@@ -90,17 +89,18 @@ body {
     gap: 5px;
 }
 
-.container .btn-container .operators-container .operatorBtn {
+.container .btn-container .operators-container .operatorBtn,
+.container .btn-container .operators-container .shift {
     flex: 1;
 }
 
-.container .btn-container .operators-container .operatorBtn.equal {
+.container .btn-container .operators-container .equal {
     flex: 2;
     background-color: royalblue;
     border: none;
 }
 
-.container .btn-container .numbers .numbers-container .clear{
+.container .btn-container .numbers .numbers-container .clear {
     background-color: rgb(212, 51, 51);
     border: rgb(245, 70, 70);
 }
