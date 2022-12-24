@@ -89,8 +89,7 @@ body {
     gap: 5px;
 }
 
-.container .btn-container .operators-container .operatorBtn,
-.container .btn-container .operators-container .shift {
+.container .btn-container .operators-container button{
     flex: 1;
 }
 
