@@ -130,6 +130,16 @@ change.addEventListener('click', () => {
             output.textContent = operationInfo[`num1`]
             console.log(operationInfo)
         }
+    } else if ((operationInfo[`num1`]) && (operationInfo[`num2`])) {
+        if (operationInfo[`num2`] > 0) {
+            operationInfo[`num2`] = -operationInfo[`num2`]
+            output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+            console.log(operationInfo)
+        } else {
+            operationInfo[`num2`] = operationInfo[`num2`] * -1
+            output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+            console.log(operationInfo)
+        }
     }
 })
 
@@ -147,8 +157,10 @@ dot.addEventListener('click', () => {
             output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
             dotCheck = true
         }
-
     }
+})
 
-
+let shift = document.querySelector('.shift')
+shift.addEventListener('click', () => {
+    // if ()
 })
