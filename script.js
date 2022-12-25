@@ -149,15 +149,19 @@ let dot = document.querySelector('.dot')
 dot.addEventListener('click', () => {
     if (!(operationInfo['operator'])) {
         if (!dotCheck) {
-            operationInfo[`num1`] += dot.textContent;
-            output.textContent = operationInfo[`num1`]
-            dotCheck = true
+            if (operationInfo[`num1`]) {
+                operationInfo[`num1`] += dot.textContent;
+                output.textContent = operationInfo[`num1`]
+                dotCheck = true
+            }
         }
     } else {
         if (!dotCheck) {
-            operationInfo[`num2`] += dot.textContent;
-            output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
-            dotCheck = true
+            if (operationInfo[`num2`]) {
+                operationInfo[`num2`] += dot.textContent;
+                output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+                dotCheck = true
+            }
         }
     }
 })
