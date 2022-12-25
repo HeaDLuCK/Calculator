@@ -180,9 +180,9 @@ shift.addEventListener('click', () => {
 
     } else {
         if ((operationInfo[`num2`])) {
-            let newNumber = operationInfo[`num1`].slice(0, -1)//second parameter is not included in the output
+            let newNumber = operationInfo[`num2`].slice(0, -1)//second parameter is not included in the output
             if (newNumber !== '') {
-                operationInfo[`num1`] = newNumber
+                operationInfo[`num2`] = newNumber
                 output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
             } else {
                 operationInfo[`num2`] = 0
