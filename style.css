@@ -17,7 +17,9 @@ body {
     height: 400px;
     width: 400px;
     background-color: gray;
-    padding: 4px;
+    padding: 16px;
+    border-radius: 18px;
+
 
 }
 
@@ -29,13 +31,16 @@ body {
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
+    border-radius: 12px;
+
 
 
 }
 
 .container #output .outputText {
     align-self: flex-end;
-    font-size: 14px;
+    font-size: 18px;
+    padding: 10px 10px 10px 0px;
 
 }
 
@@ -43,6 +48,8 @@ body {
     align-self: flex-end;
     justify-self: center;
     font-size: 26px;
+    padding-right: 10px;
+
 
 }
 
@@ -52,9 +59,16 @@ body {
 }
 
 .container .btn-container>* {
-    /* border: 2px solid red; */
-    flex: 1;
     margin: 4px;
+
+}
+
+.container .btn-container .numbers {
+    flex: 1.5;
+}
+
+.container .btn-container .operators-container {
+    flex: 1;
 }
 
 .container .btn-container .operators-container {
@@ -69,7 +83,6 @@ body {
 }
 
 .container .btn-container .numbers>* {
-    /* border: 2px solid purple; */
     flex: 1;
 }
 
@@ -80,7 +93,21 @@ body {
 
 .container .btn-container .numbers .numbers-container>* {
     flex: 1;
+    background-color: #505050;
+    color: #D4D4D2;
+    font-size: 36px;
+    border-radius: 12px;
+    border: none;
+
 }
+
+.container .btn-container .numbers .numbers-container>*:hover{
+
+    background-color: #202020;
+
+
+}
+
 
 .container .btn-container .operators-container>* {
     flex: 1;
@@ -89,9 +116,21 @@ body {
     gap: 5px;
 }
 
-.container .btn-container .operators-container button{
+.container .btn-container .operators-container button {
+    background-color: #1C1C1C;
+    color: #D4D4D2;
+    border-radius: 12px;
+    font-size: 36px;
     flex: 1;
+    border: none;
+
 }
+
+.container .btn-container .operators-container button:hover {
+    background-color: #413d3d;
+
+}
+
 
 .container .btn-container .operators-container .equal {
     flex: 2;
@@ -99,7 +138,15 @@ body {
     border: none;
 }
 
+.container .btn-container .operators-container .equal:hover {
+    background-color: #254ab8;
+}
+
 .container .btn-container .numbers .numbers-container .clear {
-    background-color: rgb(212, 51, 51);
-    border: rgb(245, 70, 70);
+    background-color: #FF9500;
+    border: none;
+}
+
+.container .btn-container .numbers .numbers-container .clear:hover {
+    background-color: #c07a19;
 }
