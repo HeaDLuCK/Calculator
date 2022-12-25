@@ -44,7 +44,6 @@ function resultOfOperator() {
         operationInfo['num1'] = result;
         delete operationInfo['num2'];
         delete operationInfo['operator'];
-        console.log(result);
     }
 }
 
@@ -131,8 +130,6 @@ numbers.forEach(number => {
                 output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
             }
         }
-
-        console.log(operationInfo);
     })
 })
 
@@ -147,7 +144,6 @@ operators.forEach(operator => {
 
         } else if ((operationInfo[`num1`]) && (operationInfo[`num2`])) {
             let result = operation(+operationInfo['num1'], +operationInfo['num2'], operationInfo['operator'])
-            console.log(result);
             outputText.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
             operationInfo[`num1`] = result;
             operationInfo['operator'] = operator.innerHTML;
@@ -156,7 +152,6 @@ operators.forEach(operator => {
             dotCheck = false
 
         }
-        console.log(operationInfo);
     })
 })
 
@@ -179,21 +174,17 @@ change.addEventListener('click', () => {
         if (operationInfo[`num1`] > 0) {
             operationInfo[`num1`] = -operationInfo[`num1`]
             output.textContent = operationInfo[`num1`]
-            console.log(operationInfo)
         } else {
             operationInfo[`num1`] = operationInfo[`num1`] * -1
             output.textContent = operationInfo[`num1`]
-            console.log(operationInfo)
         }
     } else if ((operationInfo[`num1`]) && (operationInfo[`num2`])) {
         if (operationInfo[`num2`] > 0) {
             operationInfo[`num2`] = -operationInfo[`num2`]
             output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
-            console.log(operationInfo)
         } else {
             operationInfo[`num2`] = operationInfo[`num2`] * -1
             output.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
-            console.log(operationInfo)
         }
     }
 })
@@ -223,7 +214,6 @@ window.addEventListener('keydown', (e) => {
 
                 } else if ((operationInfo[`num1`]) && (operationInfo[`num2`])) {
                     let result = operation(+operationInfo['num1'], +operationInfo['num2'], operationInfo['operator'])
-                    console.log(result);
                     outputText.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
                     operationInfo[`num1`] = result;
                     operationInfo['operator'] = e.key
