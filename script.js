@@ -101,14 +101,16 @@ operators.forEach(operator => {
 
 let equal = document.querySelector('.equal')
 equal.addEventListener('click', () => {
-    let result = operation(+operationInfo['num1'], +operationInfo['num2'], operationInfo['operator']);
-    operationInfo['finish'] = true;
-    outputText.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
-    output.textContent = result;
-    operationInfo['num1'] = result;
-    delete operationInfo['num2'];
-    delete operationInfo['operator'];
-    console.log(result);
+    if (operationInfo[`num1`] && operationInfo['num2'] && operationInfo['operator']) {
+        let result = operation(+operationInfo['num1'], +operationInfo['num2'], operationInfo['operator']);
+        operationInfo['finish'] = true;
+        outputText.textContent = operationInfo[`num1`] + operationInfo[`operator`] + operationInfo[`num2`]
+        output.textContent = result;
+        operationInfo['num1'] = result;
+        delete operationInfo['num2'];
+        delete operationInfo['operator'];
+        console.log(result);
+    }
 })
 
 let clear = document.querySelector('.clear')
